@@ -142,3 +142,19 @@ body, html {
     box-shadow: 0 0 8px red;
     color: red;
 }
+
+.cropper-point {
+	border-radius: 50%;
+	background-color: blue !important;
+	zoom: 1.8;
+}
+
+.cropper-view-box {
+    outline: white dashed 2px !important;
+}
+.cropper-line {
+    background-color: white !important;
+}
+.cropper-dashed {
+	border: 1px dashed gray !important;
+}
