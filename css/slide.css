@@ -1,0 +1,47 @@
+.images-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 85%;
+	opacity: 0;
+}
+
+.images-slide .slide {
+	position: absolute;
+	top: 5%;
+	bottom: 5%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 90%;
+	height: 90%;
+	text-align: center;
+}
+
+.images-slide .slide img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.images-slide .slide-button {
+	position: absolute;
+	top: 46%;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid gray;
+	transition: all 0.3s;
+}
+.images-slide #left-button {
+	left: 8px;
+	background-image: url(../img/left.svg);
+}
+
+.images-slide #right-button {
+	right: 8px;
+	background-image: url(../img/right.svg);
+}
+.images-slide .slide-button:hover {
+	background-color: #E5E5E5;
+}
