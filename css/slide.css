@@ -4,6 +4,8 @@
 	left: 0;
 	height: 100%;
 	width: 85%;
+	min-height: 400px;
+	min-width: 600px;
 	opacity: 0;
 }
 

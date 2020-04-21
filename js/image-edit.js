@@ -102,6 +102,9 @@ function carousel(isLeft) {
 		slide.querySelector('img').removeAttribute('id');
 		next_slide.id = "slide-visible";
 		next_slide.querySelector('img').id = "onfocus";
+		let img = next_slide.querySelector('img');
+		$('#image-width')[0].innerText = img.getAttribute("data-origin-width");
+	 	$('#image-height')[0].innerText = img.getAttribute("data-origin-height");
 	}
 }
 

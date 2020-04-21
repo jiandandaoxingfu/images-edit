@@ -36,6 +36,8 @@ function create_image(image) {
 			if( $('#images-list')[0].getElementsByTagName('img').length ===  images_length ) {
 	 			document.querySelector('.slide').id = "slide-visible";
 	 			$('#image-length')[0].innerText = images_length;
+	 			$('#image-width')[0].innerText = img.width;
+	 			$('#image-height')[0].innerText = img.height;
 	 			document.querySelector('img').id = "onfocus";
 				$('#select-images')[0].style.display = "none";
 				$('#images-list')[0].style.opacity = 1;
