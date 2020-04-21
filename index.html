@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/slide.css">
 	<link rel="stylesheet" type="text/css" href="cropperJs/cropper.min.css">
-	<script type="text/javascript" src="cropperJs/jquery.min.js"></script>
+	<script type="text/javascript" src="cropperJs/jquery.js"></script>
 	<script type="text/javascript" src="cropperJs/cropper.min.js"></script>
 	<script type="text/javascript" src="cropperJs/jquery-cropper.js"></script>
 </head>
@@ -19,39 +19,64 @@
 	</div>
 
 	<div id="images-list" class="images-slide">
+		<div id="image-info">
+			<span id="image-index">1</span>
+			<span>/</span>
+			<span id="image-length"></span>
+		</div>
 		<div id="left-button" class="slide-button" tabindex="0"></div>
 		<div id="right-button" class="slide-button" tabindex="0"></div>
 	</div>
 
 	<div id="images-edit">
-		<h3>裁剪框</h3>
+		<h3>剪切</h3>
 		<div class="input" tabindex="0">
 			<label>Top:</label>
-			<input name="" type="text" id="top" />
+			<input onkeyup="update_cropper();" name="" type="text" id="top" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>Left:</label>
-			<input name="" type="text" id="left" />
+			<input onkeyup="update_cropper();" name="" type="text" id="left" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>宽度:</label>
-			<input name="" type="text" id="width" />
+			<input onkeyup="update_cropper();" name="" type="text" id="width" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>高度:</label>
-			<input name="" type="text" id="height" />
+			<input onkeyup="update_cropper();" name="" type="text" id="height" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>旋转:</label>
-			<input name="" type="text" id="rotate" />
+			<input onkeyup="update_cropper();" name="" type="text" id="rotate" />
 		</div>
 		<div class="button" tabindex="0">
-			<button>单个调整</button>
+			<button>剪切</button>
+		</div>
+		<div class="button" tabindex="0">
+			<button>复原</button>
+		</div>
+		<div class="button" tabindex="0">
+			<button>全部保存</button>
+		</div>
+
+		<h3>调整大小</h3>
+		<div class="input" tabindex="0">
+			<label>宽度:</label>
+			<input onkeyup="update_cropper();" name="" type="text" id="width" />
+		</div>
+		<div class="input" tabindex="0">
+			<label>高度:</label>
+			<input onkeyup="update_cropper();" name="" type="text" id="height" />
+		</div>
+		<div class="button" tabindex="0">
+			<button>调整</button>
 		</div>
 		<div class="button" tabindex="0">
 			<button>全部调整</button>
 		</div>
 	</div>
+	<script type="text/javascript" src="js/keycode.js"></script>
 	<script type="text/javascript" src="js/image-preview.js"></script>
 	<script type="text/javascript" src="js/image-edit.js"></script>
 </body>

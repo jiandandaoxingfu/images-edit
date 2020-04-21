@@ -9,6 +9,7 @@ body, html {
 	width: 100%;
 	text-align: center;
 }
+
 #select-images {
 	opacity: 1;
 	position: absolute;
@@ -54,16 +55,15 @@ body, html {
 	left: 85%;
 	width: 15%;
 	min-width: 120px;
-	height: 98%;
+	height: 100%;
 	opacity: 0;
 	border-left: 1px solid black;
-	padding-top: 2%;
 }		
 .input {
 	position: relative;
 	left: 0px;
 	right: 0px;
-	margin: 15px auto;
+	margin: 10px auto;
 	height: 32px;
 	width: 115px;
 	border: 1px solid black;
@@ -90,7 +90,7 @@ body, html {
 }
 
 .button {
-	margin: 15px auto;
+	margin: 10px auto;
 }
 
 .button button  {
@@ -143,6 +143,11 @@ body, html {
     color: red;
 }
 
+
+.cropper-container, .cropper-wrap-box, .cropper-drag-box {
+	background-color: black !important;
+	background-image: none !important;
+}
 .cropper-point {
 	border-radius: 50%;
 	background-color: blue !important;
@@ -157,4 +162,8 @@ body, html {
 }
 .cropper-dashed {
 	border: 1px dashed gray !important;
+}
+
+h3 {
+	margin-top: 5px;
 }
