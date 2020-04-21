@@ -15,7 +15,7 @@
 	text-align: center;
 }
 .images-slide #image-info span {
-	font-size: 22px;
+	font-size: 20px;
 	color: black;
 }
 
@@ -33,7 +33,7 @@
 	border-radius: 4px;
 	opacity: 0;
 	z-index: 1;
-	transition: opacity 0.4s;
+	transition: opacity 0.5s;
 	box-shadow: 0 0 20px black;
 }
 

@@ -4,6 +4,8 @@ var $rotate = $("#rotate");
 var $top = $("#top");
 var $left = $("#left");
 var $image, cropper;
+var canvas = document.createElement('canvas');
+var ctx = canvas.getContext('2d');
 
 document.addEventListener('click', e => {
 	let ele = e.target;
@@ -17,7 +19,11 @@ document.addEventListener('click', e => {
 		} else if( action === "复原" ) {
 			reset();
 		} else if( action === "全部保存" ) {
-
+			images_save();
+		} else if( action === '调整' ) {
+			image_resize($('#onfocus')[0]);
+		} else if( action === '全部调整' ) {
+			images_resize();
 		}
 	} else if( ele.id === "left-button" ) {
 		carousel(!0);
@@ -102,6 +108,36 @@ function carousel(isLeft) {
 function input_number_add(input, delta) {
 	input.value = parseInt(input.value) + delta;
 	update_cropper();
+}
+
+function image_resize(img) {
+	if( cropper ) $image.cropper('destroy');
+	let width = parseInt($('#resize-width')[0].value),
+		height = parseInt($('#resize-height')[0].value);
+	canvas.width = width;
+	canvas.height = height;
+	ctx.clearRect(0, 0, width, height);
+	ctx.drawImage(img, 0, 0, width, height);
+	compute_img_class(img, width, height);
+	img.src = canvas.toDataURL(img.getAttribute('data-type'));
+}
+
+function images_resize() {
+	let imgs = document.querySelectorAll('img');
+	for(let img of imgs) {
+		image_resize(img);
+	}
+}
+
+function images_save() {
+	let imgs = document.querySelectorAll('img');
+	for(let img of imgs) {
+		let a = document.createElement('a');
+		a.href = img.src;
+		a.download = img.getAttribute('name');
+		let event = new MouseEvent('click');
+		a.dispatchEvent(event);
+	}
 }
 
 document.addEventListener('keydown', e => {
