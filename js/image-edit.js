@@ -31,11 +31,11 @@ function create_cropper(img) {
 function update_cropper() {
 	if( !cropper ) return;
 	let data = {
-		width: parseInt( $width[0].value ),
-		height: parseInt( $height[0].value ),
-		rotate: parseInt( $rotate[0].value ),
-		y: parseInt( $top[0].value ),
-		x: parseInt( $left[0].value )
+		width: Math.round( parseFloat(  $width[0].value  ) ) ,
+		height: Math.round( parseFloat(  $height[0].value  ) ) ,
+		rotate: Math.round( parseFloat(  $rotate[0].value  ) ) ,
+		y: Math.round( parseFloat(  $top[0].value  ) ) ,
+		x: Math.round( parseFloat(  $left[0].value  ) ) 
 	}
 	cropper.setData(data);
 }
@@ -55,7 +55,7 @@ function update_aspectRatio() {
 
 function crop() {
 	if( cropper ) {
-		let index = parseInt( $('#image-index')[0].innerText ) - 1;
+		let index = parseInt(  $('#image-index' )[0].innerText ) - 1;
 		let data = cropper.getData();
 		images_array[index].crop_height = data.height;
 		images_array[index].crop_width = data.width;
@@ -71,7 +71,7 @@ function crop() {
 
 function reset() {
 	let img = $('#onfocus')[0];
-	let index = parseInt( $('#image-index')[0].innerText ) - 1;
+	let index = parseInt(  $('#image-index' )[0].innerText ) - 1;
 	let data = images_array[index];
 	data.is_crop = !1;
 	data.is_resize = !1;
@@ -97,8 +97,8 @@ function images_save() {
 
 function image_resize(img, index) {
 	if( cropper ) $image.cropper('destroy');
-	let width = parseInt($('#resize-width')[0].value),
-		height = parseInt($('#resize-height')[0].value);
+	let width = Math.round( parseFloat( $('#resize-width' ) ) [0].value),
+		height = Math.round( parseFloat( $('#resize-height' ) ) [0].value);
 	canvas.width = width;
 	canvas.height = height;
 	ctx.clearRect(0, 0, width, height);
@@ -106,7 +106,7 @@ function image_resize(img, index) {
 	compute_img_class(img, width, height);
 
 	if( !index ) {
-		index = parseInt( $('#image-index')[0].innerText ) - 1;
+		index = parseInt(  $('#image-index' )[0].innerText ) - 1;
 		$('#image-width')[0].innerText = Math.round(width);
 		$('#image-height')[0].innerText = Math.round(height);
 	}
@@ -152,7 +152,7 @@ document.addEventListener('keydown', e => {
 
 function input_number_add(input, delta) {
 	if( input.id === 'aspectRatio' ) return;
-	input.value = parseInt(input.value) + delta;
+	input.value = Math.round( parseFloat( input.value ) )  + delta;
 	update_cropper();
 }
 
@@ -161,10 +161,10 @@ function carousel(isLeft) {
 	let next_slide;
 	if( isLeft && slide.previousSibling.className === 'slide') {
 		next_slide = slide.previousSibling;
-		$('#image-index')[0].innerText = parseInt($('#image-index')[0].innerText) - 1;
+		$('#image-index')[0].innerText = parseInt( $('#image-index' ) [0].innerText) - 1;
 	} else if( !isLeft && slide.nextSibling ) {
 		next_slide = slide.nextSibling;
-		$('#image-index')[0].innerText = parseInt($('#image-index')[0].innerText) + 1;
+		$('#image-index')[0].innerText = parseInt( $('#image-index' ) [0].innerText) + 1;
 	}
 	
 	if( next_slide ) {
@@ -173,7 +173,7 @@ function carousel(isLeft) {
 		next_slide.id = "slide-visible";
 		next_slide.querySelector('img').id = "onfocus";
 		let img = next_slide.querySelector('img');
-		let index = parseInt( $('#image-index')[0].innerText ) - 1;
+		let index = parseInt(  $('#image-index' )[0].innerText ) - 1;
 		let data = images_array[index];
 
 		let width, height;
