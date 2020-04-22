@@ -39,23 +39,27 @@
 		<h3>剪切</h3>
 		<div class="input" tabindex="0">
 			<label>Top:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="top" />
+			<input onkeyup="update_cropper();" type="text" id="top" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>Left:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="left" />
+			<input onkeyup="update_cropper();" type="text" id="left" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>宽度:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="width" />
+			<input onkeyup="update_cropper();" type="text" id="width" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>高度:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="height" />
+			<input onkeyup="update_cropper();" type="text" id="height" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>旋转:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="rotate" />
+			<input onkeyup="update_cropper();" type="text" id="rotate" />
+		</div>
+		<div class="input" tabindex="0">
+			<label>比例:</label>
+			<input onmouseout="update_aspectRatio();" type="text" id="aspectRatio" placeholder="16:9" />
 		</div>
 		<div class="button" tabindex="0">
 			<button>剪切</button>
@@ -70,11 +74,11 @@
 		<h3>调整大小</h3>
 		<div class="input" tabindex="0">
 			<label>宽度:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="resize-width" />
+			<input onkeyup="update_cropper();" type="text" id="resize-width" />
 		</div>
 		<div class="input" tabindex="0">
 			<label>高度:</label>
-			<input onkeyup="update_cropper();" name="" type="text" id="resize-height" />
+			<input onkeyup="update_cropper();" type="text" id="resize-height" />
 		</div>
 		<div class="button" tabindex="0">
 			<button>调整</button>
