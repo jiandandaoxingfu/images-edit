@@ -3,6 +3,7 @@
 	padding: 0px;
 	text-decoration: none;
 	outline: none;
+	font-family: 'kaiti';
 }
 body, html {
 	height: 100%;
@@ -10,7 +11,7 @@ body, html {
 	text-align: center;
 }
 
-#select-images {
+#images-select {
 	opacity: 1;
 	position: absolute;
 	left: 0;
@@ -22,7 +23,7 @@ body, html {
 	z-index: 2;
 	transition: opacity 1s;
 }
-#select-images a {
+#images-select a {
 	display: inline-block;
 	width: 180px;
 	font-size: 35px;
@@ -31,16 +32,16 @@ body, html {
 	border-radius: 5px;
 	padding: 5px;
 }
-#select-images a:hover {
+#images-select a:hover {
 	border: 1px solid blue;
 	color: blue;
 }
-#select-images a:active {
+#images-select a:active {
 	border: 1px solid red;
 	color: red;
 	box-shadow: 0px 0px 3px red;
 }
-#select-images input {
+#images-select input {
 	width: 205px;
 	height: 50px;
 	opacity: 0;
@@ -169,4 +170,32 @@ body, html {
 
 h3 {
 	margin-top: 5px;
+}
+
+@media print {
+	#images-edit, #images-select, #image-info, .slide-button {
+		display: none;
+	}
+	#images-list {
+		width: 100%;
+		height: 100%;
+	}
+
+	#images-list .slide, #images-list #slide-visible {
+		position: relative;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		max-width: 595px;
+		max-height: 842px;
+		opacity: 1;
+		page-break-after: always;
+	}
 }

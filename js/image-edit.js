@@ -97,8 +97,8 @@ function images_save() {
 
 function image_resize(img, index) {
 	if( cropper ) $image.cropper('destroy');
-	let width = Math.round( parseFloat( $('#resize-width' ) ) [0].value),
-		height = Math.round( parseFloat( $('#resize-height' ) ) [0].value);
+	let width = Math.round( parseFloat( $('#resize-width' )[0].value ) ),
+		height = Math.round( parseFloat( $('#resize-height' )[0].value ) );
 	canvas.width = width;
 	canvas.height = height;
 	ctx.clearRect(0, 0, width, height);
@@ -209,6 +209,8 @@ document.addEventListener('click', e => {
 			image_resize($('#onfocus')[0]);
 		} else if( action === '全部调整' ) {
 			images_resize();
+		} else if( action === "打印" ) {
+			window.print();
 		}
 	} else if( ele.id === "left-button" ) {
 		carousel(!0);

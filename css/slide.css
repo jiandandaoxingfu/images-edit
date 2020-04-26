@@ -12,20 +12,21 @@
 
 .images-slide #image-info {
 	position: absolute;
-	top: 1%;
+	bottom: 0%;
 	height: 6%;
 	width: 100%;
 	text-align: center;
 }
 .images-slide #image-info span {
 	font-size: 20px;
+	line-height: 40px;
 	color: black;
 }
 
 .images-slide .slide {
 	position: absolute;
-	top: 7%;
-	bottom: 3%;
+	top: 3%;
+	bottom: 7%;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -33,11 +34,11 @@
 	height: 90%;
 	text-align: center;
 	background-color: black;
-	border-radius: 4px;
+	border-radius: 10px;
 	opacity: 0;
 	z-index: 1;
 	transition: opacity 0.8s;
-	box-shadow: 0 0 20px black;
+	box-shadow: 0px 0px 10px black;
 }
 
 #slide-visible {

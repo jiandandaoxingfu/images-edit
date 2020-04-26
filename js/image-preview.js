@@ -54,9 +54,9 @@ function display_images() {
 	 	$('#image-width')[0].innerText = images_array[0].origin_width;
 	 	$('#image-height')[0].innerText = images_array[0].origin_height;
 
-		$('#select-images')[0].style.opacity = 0;
+		$('#images-select')[0].style.opacity = 0;
 		setTimeout(() => {
-			$('#select-images')[0].style.display = "none";
+			$('#images-select')[0].style.display = "none";
 		}, 1000);
 
 		$('#images-list')[0].style.opacity = 1;
