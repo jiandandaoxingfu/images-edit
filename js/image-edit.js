@@ -79,6 +79,8 @@ function reset() {
 	if( img.src !== data.origin_src ) {
 		compute_img_class(img, data.origin_width, data.origin_height);
 		img.src = data.origin_src;
+		$('#image-width')[0].innerText = Math.round(data.origin_width);
+	 	$('#image-height')[0].innerText = Math.round(data.origin_height);
 		create_cropper(img);
 	}
 }
