@@ -212,6 +212,7 @@ document.addEventListener('click', e => {
 		} else if( action === '全部调整' ) {
 			images_resize();
 		} else if( action === "打印" ) {
+			if( cropper ) $image.cropper('destroy');
 			window.print();
 		}
 	} else if( ele.id === "left-button" ) {
